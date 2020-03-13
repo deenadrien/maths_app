@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block title %}Ajouter un problème{% endblock %}
+
+{% block content %}
+    <h2 class="text-center">Ajouter un problème</h2>
+    <hr>
+    <form action="/add/form" method="post">
+        <div class="form-group">
+            <label for="numberInput">Numéro</label>
+            <input type="number" class="form-control" name="problemNumber" id="problemNumber" aria-describedby="numberHelp">
+            <small id="numberHelp" class="form-text text-muted">Numéro du problème</small>
+        </div>
+        <div class="form-group">
+            <label for="problemContent">Contenu</label>
+            <textarea class="form-control" name="problemContent" id="problemContent" rows="6"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="numberInput">Résultat</label>
+            <input type="number" class="form-control" name="problemResult" id="problemResult" aria-describedby="resultHelp">
+            <small id="resultHelp" class="form-text text-muted">Solution du problème</small>
+        </div>
+        <div class="form-group">
+            <label for="numberInput">Niveau</label>
+            <input type="number" class="form-control" name="problemLevel" id="problemLevel" aria-describedby="levelHelp">
+            <small id="levelHelp" class="form-text text-muted">Niveau du problème</small>
+        </div>
+        <button type="submit" class="btn btn-warning btn-center">Enregistrer</button>
+    </form>
+{% endblock %}

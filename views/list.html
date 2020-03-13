@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block title %}Liste des problèmes{% endblock %}
+
+{% block content %}
+    <h2 class="text-center">Tous les problèmes</h2>
+    <hr>
+    <div class="btns-center"><a href="/add"><button class="btn btn-warning">Ajouter</button></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/edit"><button class="btn btn-warning">Editer</button></a></div>
+    <table>
+        <thead class="thead-light">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Résumé</th>
+              <th scope="col">Resultat</th>
+              <th scope="col">Niveau</th>
+              <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for problem in problems %}
+                <tr>
+                    <th scope="row" class="id-table">{{problem.number}}</th>
+                    <td class="summary-table">{{problem.summary}}...</td>
+                    <td class="result-table">{{problem.result}}</td>
+                    <td class="level-table">{{problem.level}}</td>
+                    <td class="action-table"><a href="#">Modifier</a>   <a href="/delete/{{problem._id}}">Supprimer</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+{% endblock %}

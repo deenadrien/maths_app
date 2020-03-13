@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block title %}Suppression{% endblock %}
+
+{% block content %}
+    {% if(state == true) %}
+        <h1>Problème supprimé !</h1>
+        <a href="/"><button class="btn btn-warning">Revenir à la liste</button></a>
+    {% else %}
+        <h1>Erreur lors de la suppression !</h1>
+        <a href="/"><button class="btn btn-warning">Revenir à la liste</button></a>
+    {% endif %}
+{% endblock %}
